@@ -34,6 +34,8 @@ This will add your changes to the git repository, once you're happy with the cha
 
     $ git commit -m "homework section 1 completed"
 
+    Teste
+
 To push your local changes to github you can run:
 
     $ git push origin master
