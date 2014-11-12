@@ -4,9 +4,29 @@
      end
     %>
 
+
+
     <html>
   <body>
     <h1>You're using a layout</h1>
+    <%= @request.query.inspect %>
+
+
+ <% if @request.query['first_name'] && !@request.query['first_name'].empty? %>
+    Hello there <%= @request.query['first_name'] %>
+  <% else %>
+    Enter thy name
+  <% end %>
+
+
+    <form method='post' action="<%= @request.path %>">
+        First name: <input type="text" name="first_name" placeholder='first name'/><br />
+        <input type="radio" name="sex" value="male" checked>Male
+<br>
+<input type="radio" name="sex" value="female">Female
+        <input type="submit" value="Submit" />
+    </form>
+
     <p>
       <h3> I'm a header</h3>
       <p>Put things in the header</p>
